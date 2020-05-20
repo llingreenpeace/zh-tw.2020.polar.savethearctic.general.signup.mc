@@ -125,9 +125,23 @@ var pageInit = function(){
             // let email = $('#fake_supporter_emailAddress').val();
             // console.log(message);
 
-            console.log($("form.en__component--page").serialize());
+            // console.log($("form.en__component--page").serialize());
             $("form.en__component--page").submit();
-            console.log("submit success")
+            // console.log("submit success")
+            window.dataLayer = window.dataLayer || [];
+            //
+            dataLayer.push({
+                'event': 'gaEvent',
+                'eventCategory': 'petitions',
+                'eventAction': 'signup',
+                'eventLabel': '2020-savethearctic',
+                'eventValue': undefined
+            });
+            dataLayer.push({
+                'event': 'fbqEvent',
+                'contentName': '2020-savethearctic',
+                'contentCategory': 'Petition Signup'
+            });
 
             window.location.href = redirectDonateLink;
 
