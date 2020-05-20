@@ -1,9 +1,10 @@
 const {$, anime, autosize, Cookies, Highcharts, dataLayer} = window
 
-const donateUrl = "https://act.greenpeace.org/page/4723/donate/1?utm_campaign=2020-dwf&ref=2020-dwf_thankyoupage_donation_btn";
-const shareUrl = "https://act.greenpeace.org/page/60863/petition/1";
-const shareFBUrl = "https://act.greenpeace.org/page/60863/petition/1";
-const shareLineUrl = "https://act.greenpeace.org/page/60863/petition/1";
+const donateUrl = "https://act.greenpeace.org/page/4723/donate/1?campaign=polar&utm_campaign=2017-arctic&utm_source=savethearctic.org&utm_medium=referral&utm_content=petition_thankyou_page";
+const shareUrl = "https://act.greenpeace.org/page/60861/petition/1";
+const shareFBUrl = "https://act.greenpeace.org/page/60861/petition/1";
+const shareLineUrl = "https://act.greenpeace.org/page/60861/petition/1";
+const redirectDonateLink = "https://act.greenpeace.org/page/4723/donate/1?campaign=polar&utm_campaign=2020-arctic&utm_source=savethearctic.org&utm_medium=referral&utm_content=petition_thankyou_page"
 
 window.donate = () => {
 	window.open(
@@ -128,6 +129,8 @@ var pageInit = function(){
             $("form.en__component--page").submit();
             console.log("submit success")
 
+            window.location.href = redirectDonateLink;
+
         },
         invalidHandler: function(event, validator) {
             // 'this' refers to the form
@@ -162,27 +165,16 @@ $(function(){
     const EN_PAGE_STATUS = resolveEnPagePetitionStatus()
 	console.log("EN_PAGE_STATUS", EN_PAGE_STATUS)
 	if (EN_PAGE_STATUS==="FRESH") {
-	// if (false) {
+	
         pageInit();
         $("#page-2").hide();
-		// if($('#voting').length == 1){
-			
-		// }
 
-		// setTimeout(function(){
-		// 	scrollTo(0,0);
-		// 	if($('#intro').length == 1) introPage.init();
-		// }, 400);
-
-		// $(window).resize(function(){
-		// 	if(introPage.active) introPage.resize();
-		// });
 	} else if (EN_PAGE_STATUS==="SUCC") {
-	// } else if (true) {
-		// pageHandler.goTo('#result', '#intro');
-        // resultPage.init();
+        
         $('#page-1').hide();
-        $('#page-2').show();
+        // $('#page-2').show();
+        window.location.href = redirectDonateLink;
         console.log("go to thank you page")
+
 	}
 })
