@@ -1,10 +1,10 @@
 const {$, anime, autosize, Cookies, Highcharts, dataLayer} = window
 
-const donateUrl = "https://act.greenpeace.org/page/4723/donate/1?campaign=polar&utm_campaign=2017-arctic&utm_source=savethearctic.org&utm_medium=referral&utm_content=petition_thankyou_page";
+const donateUrl = "https://act.greenpeace.org/page/4723/donate/1?campaign=polar&ref=savethearctic_thankyou_page";
 const shareUrl = "https://act.greenpeace.org/page/60861/petition/1";
 const shareFBUrl = "https://act.greenpeace.org/page/60861/petition/1";
 const shareLineUrl = "https://act.greenpeace.org/page/60861/petition/1";
-const redirectDonateLink = "https://act.greenpeace.org/page/4723/donate/1?campaign=polar&utm_campaign=2020-arctic&utm_source=savethearctic.org&utm_medium=referral&utm_content=petition_thankyou_page"
+const redirectDonateLink = "https://act.greenpeace.org/page/4723/donate/1?campaign=polar&ref=savethearctic_thankyou_page"
 
 window.donate = () => {
 	window.open(

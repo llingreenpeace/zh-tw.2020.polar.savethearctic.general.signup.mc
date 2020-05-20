@@ -1667,6 +1667,7 @@ select {
     line-height: 1.4em;
     text-transform: uppercase;
     color: white;
+    text-shadow: 2px 2px 8px #000;
 }
 
 /* line 426, /Users/lattecreative/RubymineProjects/GreenPeace-SavetheArctic/source/css/partials/_320grid.sass */
@@ -2288,6 +2289,12 @@ select {
     float: left;
     margin-right: 2.94118%;
     display: inline;
+}
+@media (max-width: 767px) {
+    .menu .menu_container .container_left {
+        width: 100% !important;
+        text-align: center !important;
+    }   
 }
 
 /* line 711, /Users/lattecreative/RubymineProjects/GreenPeace-SavetheArctic/source/css/partials/_320grid.sass */
@@ -3816,7 +3823,7 @@ body[lang=es-CO] #thankyou.container .share_donate .donate {
         position: relative;
         padding-left: 0;
         padding-right: 0;
-        padding-bottom: 5%;
+        padding-bottom: 3%;
     }
 
     /* line 117, /Users/lattecreative/RubymineProjects/GreenPeace-SavetheArctic/source/css/partials/_960grid.sass */
