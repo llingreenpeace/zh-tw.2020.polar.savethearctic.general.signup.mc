@@ -68,7 +68,7 @@ var pageInit = function(){
     $.validator.addMethod( //override email with django email validator regex - fringe cases: "user@admin.state.in..us" or "name@website.a"
         'email',
         function(value, element){
-                return this.optional(element) || /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/i.test(value);
+            return this.optional(element) || /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/i.test(value);
         },
         'Email 格式錯誤'
     );
@@ -76,18 +76,30 @@ var pageInit = function(){
     $.validator.addMethod(
         "taiwan-phone",
         function (value, element) {
-            // console.log('do validate')
-            console.log('phone required :', $('#center_phone').prop('required'));
-            if ($('#center_phone').prop('required')) {
-                return this.optional(element) || /^[\d \-+]{7,15}$/i.test(value);
-            } else if ($('#center_phone').val()) {
-                return this.optional(element) || /^[\d \-+]{7,15}$/i.test(value);
+            
+            const phoneReg1 = new RegExp(/0\d{1,2}-\d{6,8}$/).test(value);
+            const phoneReg2 = new RegExp(/0\d{1,2}\d{6,8}$/).test(value);
+            const phoneReg3 = new RegExp(/((?=(09))[0-9]{10})$/).test(value);
+            const phoneReg4 = new RegExp(/((?=(886))[0-9]{12,13})$/).test(value);
+            // const phoneReg5 = new RegExp(/((?=(886))[0-9]{11,13})$/).test(value);
+            
+            console.log(value)
+            console.log(phoneReg1)
+            console.log(phoneReg2)
+            console.log(phoneReg3)
+            console.log(phoneReg4)
+            // console.log(phoneReg5)
+
+            if ($('#center_phone').val()) {
+                return (phoneReg1 || phoneReg2 || phoneReg3 || phoneReg4)
             }
+            console.log('phone testing')
             return true
         },
-        "電話格式不正確，請只輸入數字 0912345678 或 02-12345678")
+        "電話格式不正確，請只輸入數字 0912345678 和 02-23612351")
 
     $.validator.addClassRules({ // connect it to a css class
+        "email": {email: true},
         "taiwan-phone" : { "taiwan-phone" : true }
     });
 
@@ -97,17 +109,7 @@ var pageInit = function(){
             element.parents("div.form-field:first").after( error );
         },
         submitHandler: function(form) {
-            // do other things for a valid form
-            // var temp = [];
-
-            // $('#voting .option .vote-btn.checked').each(function(k,v) {
-            //     var id = $(v).data('id');
-            //     temp.push(id);
-            // });
-
-            // Cookies.set('checked_options', temp);
-            // console.log('en__field_supporter_questions_288643', temp.join())
-
+            
             $('#en__field_supporter_firstName').val($('#center_name').val());
             $('#en__field_supporter_lastName').val($('#center_lastname').val());
             $('#en__field_supporter_emailAddress').val($('#center_email').val());
@@ -118,17 +120,8 @@ var pageInit = function(){
                 $('#en__field_supporter_phoneNumber').val($('#center_phone').val());
             }
             $('#en__field_supporter_NOT_TAGGED_6').val($('#center_yearofbirth').val());
-
-            // // handling opinion submit
-            // let message = $('#fake_message').val().trim();
-            // let last_name = $('#fake_supporter_lastName').val();
-            // let email = $('#fake_supporter_emailAddress').val();
-            // console.log(message);
-
-            // console.log($("form.en__component--page").serialize());
-            $("form.en__component--page").submit();
-            // console.log("submit success")
-            window.dataLayer = window.dataLayer || [];
+            console.log("ga datalayer pushed")
+            // window.dataLayer = window.dataLayer || [];
             //
             dataLayer.push({
                 'event': 'gaEvent',
@@ -137,14 +130,14 @@ var pageInit = function(){
                 'eventLabel': '2020-savethearctic',
                 'eventValue': undefined
             });
+
             dataLayer.push({
                 'event': 'fbqEvent',
                 'contentName': '2020-savethearctic',
                 'contentCategory': 'Petition Signup'
             });
 
-            window.location.href = redirectDonateLink;
-
+            $("form.en__component--page").submit();
         },
         invalidHandler: function(event, validator) {
             // 'this' refers to the form

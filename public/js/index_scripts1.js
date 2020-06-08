@@ -3,24 +3,24 @@ var countryindex= {AF: 93,AL: 355,DZ: 213,AS: 1684,AD: 376,AO: 244,AI: 1264,AQ: 
 var countryredirect = {AF: "en",AL: "en",DZ: "ar",AS: "en",AD: "en",AO: "en",AI: "en",AQ: "en",AG: "en",AR: "es-AR",AM: "en",AW: "en",AU: "en-AU",AT: "de-AT",AZ: "en",BS: "en",BH: "ar",BD: "en",BB: "en",BY: "en",BE: "fr-BE",BZ: "en",BJ: "en",BM: "en",BT: "en",BO: "en",BA: "en",BW: "en",BR: "pt-BR",VG: "en",BN: "en",BG: "bg",BF: "en",MM: "en",BI: "en",KH: "en",CM: "en",CA: "en-CA",CV: "en",KY: "en",CF: "en",TD: "ar",CL: "es-CL",CN: "en",CX: "en",CC: "en",CO: "es-CO",KM: "ar",CK: "en",CR: "en",CU: "en",CY: "en",CZ: "cs-CZ",CD: "en",DK: "da",DJ: "ar",DM: "en",DO: "en",EC: "en",EG: "ar",SV: "en",GQ: "en",ER: "en",EE: "en",ET: "en",FK: "en",FO: "en",FJ: "en",FI: "fi",FR: "fr",PF: "en",GA: "en",GM: "en",GE: "en",DE: "de",GH: "en",GI: "en",GR: "el",GL: "en",GD: "en",GU: "en",GT: "en",GN: "en",GW: "en",GY: "en",HT: "en",VA: "en",HN: "en",HK: "zh-HK",HU: "en",IS: "en",IN: "en",ID: "en",IR: "en",IQ: "ar",IE: "en",IM: "en",IL: "en",IT: "it",CI: "en",JM: "en",JP: "en",JO: "ar",KZ: "en",KE: "en",KI: "en",KW: "ar",KG: "en",LA: "en",LV: "en",LB: "ar",LS: "en",LR: "en",LY: "ar",LI: "en",LT: "en",LU: "fr-LU",MO: "en",MK: "en",MG: "en",MW: "en",MY:"en",MV: "en",ML: "en",MT: "en",MH: "en",MR: "ar",MU: "en",YT: "en",MX: "es-MX",FM: "en",MD: "en",MC: "en",MN: "en",ME: "en",MA: "ar",MZ: "en",NA: "en",NR: "en",NP: "en",NL: "nl",AN: "en",NC: "en",NZ: "en-NZ",NI: "en",NE: "en",NG: "en",NU: "en",KP: "en",MP: "en",NO: "no",OM: "ar",PK: "en",PW: "en",PA: "en",PG: "en",PY: "en",PE: "es-PE",PH: "en-PH",PN: "en",PL: "pl",PT: "pt",PR: "en",QA: "ar",CG: "en",RO: "ro",RU: "ru",RW: "en",BL: "en",SH: "en",KN: "en",LC: "en",MF: "en",PM: "en",VC: "en",WS: "en",SM: "en",ST: "en",SA: "ar",SN: "en",RS: "en",SC: "en",SL: "en",SG: "en",SK: "sk",SI: "en",SB: "en",SO: "en",ZA: "en",KR: "ko",ES: "es",LK: "en",SD: "ar",SR: "en",SZ: "en",SE: "sv",CH: "de-CH" ,SY: "ar",TW: "zh-TW",TJ: "en",TZ: "en",TH: "th",TL: "en",TG: "en",TK: "en",TO: "en",TT: "en",TN: "ar",TR: "tr",TM: "en",TC: "en",TV: "en",UG: "en",UA: "en",AE: "ar",GB: "en-GB",US: "en-US",UY: "en",VI: "en",UZ: "en",VU: "en",VE: "en",VN: "en",WF: "en",YE: "ar",ZM: "en",ZW: "en"}
 
 $(document).ready(function(){
-    russian_regions(1);
-    russian_regions(2);
-    indexchanges("#country", "#countrycode");
-    indexchanges("#center_country", "#center_countrycode");
-	indexchanges2("#pages_lenguage");
+    // russian_regions(1);
+    // russian_regions(2);
+    // indexchanges("#country", "#countrycode");
+    // indexchanges("#center_country", "#center_countrycode");
+	// indexchanges2("#pages_lenguage");
 
-    $('input.js-select-all').on('change', function() {
-        //console.log($(this).attr('checked'));
-        if (this.checked) {
-            $(this).closest('form').find('input[type="checkbox"]').each(function(){
-                $(this).prop('checked',true);
-            });
-        } else {
-            $(this).closest('form').find('input[type="checkbox"]').each(function(){
-                $(this).prop('checked',false);
-            });
-        }
-    });
+    // $('input.js-select-all').on('change', function() {
+    //     //console.log($(this).attr('checked'));
+    //     if (this.checked) {
+    //         $(this).closest('form').find('input[type="checkbox"]').each(function(){
+    //             $(this).prop('checked',true);
+    //         });
+    //     } else {
+    //         $(this).closest('form').find('input[type="checkbox"]').each(function(){
+    //             $(this).prop('checked',false);
+    //         });
+    //     }
+    // });
 
 });
 
@@ -58,14 +58,14 @@ if(!(isMobile())) {
 }
 
 
-function checkSubmit(id){
+// function checkSubmit(id){
 
-    document.getElementById(id).disabled = true;
-    setTimeout(function(){
-        document.getElementById(id).removeAttribute('disabled');
-    }, 2000);	
-    return true;
-}
+//     document.getElementById(id).disabled = true;
+//     setTimeout(function(){
+//         document.getElementById(id).removeAttribute('disabled');
+//     }, 2000);	
+//     return true;
+// }
 
 
 function open_form(elem){
@@ -206,9 +206,9 @@ $( "#center_email" ).bind( "click", function(){
     open_form($(this));
 });
 
-$("#facebook_button").bind("click", function(){
-    open_form($(this));
-});
+// $("#facebook_button").bind("click", function(){
+//     open_form($(this));
+// });
 
 $("#closed_x").bind("click", function(){
     if($(this).hasClass("contemplate")){
@@ -296,335 +296,335 @@ $("#closed_x").bind("click", function(){
     }
 });
 
-function russian_regions(form){
-    var value
-    switch(form){
-        case 1:
-            value = $("#center_country").val();
-            var state = $("#principal_form").attr("state");
-            if(isMobile()){
-                if ((value == "RU")&& (state == "opened")){
-                    $("#center_region_record").css({display: "block"});
-                }
-                else{
-                    $("#center_region_record").css({display: "none"});
-                }
-            }
-            else{
-                if ((value == "RU")&& (state == "opened")){
-                    $("#center_region_record").slideDown(450);
-                }
-                else{
-                    $("#center_region_record").slideUp(450);
-                }
-            }
-            break;
+// function russian_regions(form){
+//     var value
+//     switch(form){
+//         case 1:
+//             value = $("#center_country").val();
+//             var state = $("#principal_form").attr("state");
+//             if(isMobile()){
+//                 if ((value == "RU")&& (state == "opened")){
+//                     $("#center_region_record").css({display: "block"});
+//                 }
+//                 else{
+//                     $("#center_region_record").css({display: "none"});
+//                 }
+//             }
+//             else{
+//                 if ((value == "RU")&& (state == "opened")){
+//                     $("#center_region_record").slideDown(450);
+//                 }
+//                 else{
+//                     $("#center_region_record").slideUp(450);
+//                 }
+//             }
+//             break;
 
-        case 2:
-            value = $("#country").val();
-            if(isMobile()){
-                if (value == "RU"){
-                    $("#region_record").css({display: "block"});
-                }
-                else{
-                    $("#region_record").css({display: "none"});
-                }
-            }
-            else{
-                if (value == "RU"){
-                    $("#region_record").slideDown(450);
-                }
-                else{
-                    $("#region_record").slideUp(450);
-                }
-            }
-            break;
-    }
-}
+//         case 2:
+//             value = $("#country").val();
+//             if(isMobile()){
+//                 if (value == "RU"){
+//                     $("#region_record").css({display: "block"});
+//                 }
+//                 else{
+//                     $("#region_record").css({display: "none"});
+//                 }
+//             }
+//             else{
+//                 if (value == "RU"){
+//                     $("#region_record").slideDown(450);
+//                 }
+//                 else{
+//                     $("#region_record").slideUp(450);
+//                 }
+//             }
+//             break;
+//     }
+// }
 
-function takeurl(index, opt){
-    var currentProtocol= window.location.protocol;
-    var currentHost = window.location.host;
-	var fn = encodeURIComponent(document.getElementsByName("first_name")[0].value);
-	var ln = encodeURIComponent(document.getElementsByName("last_name")[0].value);
-	var em = encodeURIComponent(document.getElementsByName("email")[0].value);
+// function takeurl(index, opt){
+//     var currentProtocol= window.location.protocol;
+//     var currentHost = window.location.host;
+// 	var fn = encodeURIComponent(document.getElementsByName("first_name")[0].value);
+// 	var ln = encodeURIComponent(document.getElementsByName("last_name")[0].value);
+// 	var em = encodeURIComponent(document.getElementsByName("email")[0].value);
 	
-	if (document.getElementsByName("sln")[0]!= undefined) var sln = encodeURIComponent(document.getElementsByName("sln")[0].value);
-	else var sln='';
+// 	if (document.getElementsByName("sln")[0]!= undefined) var sln = encodeURIComponent(document.getElementsByName("sln")[0].value);
+// 	else var sln='';
 	
-	if (document.getElementsByName("birth_date")[0]!= undefined) var bd = encodeURIComponent(document.getElementsByName("birth_date")[0].value);	
-	else var bd='';
+// 	if (document.getElementsByName("birth_date")[0]!= undefined) var bd = encodeURIComponent(document.getElementsByName("birth_date")[0].value);	
+// 	else var bd='';
 	
-	if (document.getElementsByName("birth_year")[0]!= undefined) var by = encodeURIComponent(document.getElementsByName("birth_year")[0].value);
-	else var by='';
+// 	if (document.getElementsByName("birth_year")[0]!= undefined) var by = encodeURIComponent(document.getElementsByName("birth_year")[0].value);
+// 	else var by='';
 	
-	if (document.getElementsByName("nid")[0]!= undefined) var ni = encodeURIComponent(document.getElementsByName("nid")[0].value);
-	else var ni='';
+// 	if (document.getElementsByName("nid")[0]!= undefined) var ni = encodeURIComponent(document.getElementsByName("nid")[0].value);
+// 	else var ni='';
 	
-	if (document.getElementsByName("age")[0]!= undefined) var ag = encodeURIComponent(document.getElementsByName("age")[0].value);
-	else var ag='';
+// 	if (document.getElementsByName("age")[0]!= undefined) var ag = encodeURIComponent(document.getElementsByName("age")[0].value);
+// 	else var ag='';
 	
-	if (document.getElementsByName("postcode")[0]!= undefined) var pc = encodeURIComponent(document.getElementsByName("postcode")[0].value);
-	else var pc='';
+// 	if (document.getElementsByName("postcode")[0]!= undefined) var pc = encodeURIComponent(document.getElementsByName("postcode")[0].value);
+// 	else var pc='';
 	
-	if (document.getElementsByName("phone")[0]!= undefined) var ph = encodeURIComponent(document.getElementsByName("phone")[0].value);
-	else var ph='';
+// 	if (document.getElementsByName("phone")[0]!= undefined) var ph = encodeURIComponent(document.getElementsByName("phone")[0].value);
+// 	else var ph='';
 
-	var curUrl = document.URL;
-	var n = curUrl.indexOf("cultureKey");
-    if (n > 2) curUrl= curUrl.substr(0, n-2);
-	window.location.href = curUrl + ((curUrl.indexOf('?') == -1) ? '?' : '&') + 'cultureKey=' + index + '&country=' + opt + '&em=' + em + '&fn=' + fn + '&ln=' + ln + '&bd=' + bd + '&by=' + by + '&ni=' + ni + '&ag=' + ag + '&pc=' + pc + '&ph=' + ph + '&sln=' + sln;
-}
+// 	var curUrl = document.URL;
+// 	var n = curUrl.indexOf("cultureKey");
+//     if (n > 2) curUrl= curUrl.substr(0, n-2);
+// 	window.location.href = curUrl + ((curUrl.indexOf('?') == -1) ? '?' : '&') + 'cultureKey=' + index + '&country=' + opt + '&em=' + em + '&fn=' + fn + '&ln=' + ln + '&bd=' + bd + '&by=' + by + '&ni=' + ni + '&ag=' + ag + '&pc=' + pc + '&ph=' + ph + '&sln=' + sln;
+// }
 
-function getUrlParameters(parameter, staticURL, decode){
-   /*
-    Function: getUrlParameters
-    Description: Get the value of URL parameters either from 
-                 current URL or static URL
-    Author: Tirumal
-    URL: www.code-tricks.com
-   */
-   var currLocation = (staticURL.length)? staticURL : window.location.search;
-   if (currLocation.indexOf('?') == -1) return false;
+// function getUrlParameters(parameter, staticURL, decode){
+//    /*
+//     Function: getUrlParameters
+//     Description: Get the value of URL parameters either from 
+//                  current URL or static URL
+//     Author: Tirumal
+//     URL: www.code-tricks.com
+//    */
+//    var currLocation = (staticURL.length)? staticURL : window.location.search;
+//    if (currLocation.indexOf('?') == -1) return false;
    
-   var parArr = currLocation.split("?")[1].split("&"),
-       returnBool = true;
+//    var parArr = currLocation.split("?")[1].split("&"),
+//        returnBool = true;
    
-   for(var i = 0; i < parArr.length; i++){
-        parr = parArr[i].split("=");
-        if(parr[0] == parameter){
-            return (decode) ? decodeURIComponent(parr[1]) : parr[1];
-            returnBool = true;
-        }else{
-            returnBool = false;            
-        }
-   }
+//    for(var i = 0; i < parArr.length; i++){
+//         parr = parArr[i].split("=");
+//         if(parr[0] == parameter){
+//             return (decode) ? decodeURIComponent(parr[1]) : parr[1];
+//             returnBool = true;
+//         }else{
+//             returnBool = false;            
+//         }
+//    }
    
-   if(!returnBool) return false;  
-}
+//    if(!returnBool) return false;  
+// }
 
-function indexchanges(country, countrycode, formchange){
-//    var opt = $(country + " option:selected").val();
-      formchange = formchange || false;
-      var index;
-      var opt = $(country + " option:selected").val();
-	  $(countrycode).val(countryindex[opt]);
-      /*if(opt == "CA" || opt == "CH" || opt =="BE"){
-        index =  navigator.language || navigator.userLanguage;
-        if(index == "undefined" || index == "null" || index == null || index == ""){
-          index = countryredirect[opt];
-        }
-      }
-      else{*/
-          index = countryredirect[opt];
-      /*}*/
-      if (index && formchange) {
-        takeurl(index, opt);
-      }
-}
+// function indexchanges(country, countrycode, formchange){
+// //    var opt = $(country + " option:selected").val();
+//       formchange = formchange || false;
+//       var index;
+//       var opt = $(country + " option:selected").val();
+// 	  $(countrycode).val(countryindex[opt]);
+//       /*if(opt == "CA" || opt == "CH" || opt =="BE"){
+//         index =  navigator.language || navigator.userLanguage;
+//         if(index == "undefined" || index == "null" || index == null || index == ""){
+//           index = countryredirect[opt];
+//         }
+//       }
+//       else{*/
+//           index = countryredirect[opt];
+//       /*}*/
+//       if (index && formchange) {
+//         takeurl(index, opt);
+//       }
+// }
 
-function indexchanges2(country, formchange){
+// function indexchanges2(country, formchange){
 		
-      formchange = formchange || false;
-      var index;
-      var opt = $(country + " option:selected").val();
+//       formchange = formchange || false;
+//       var index;
+//       var opt = $(country + " option:selected").val();
 	  
-      if (formchange) {
-		var curUrl = document.URL;
-		var newCulture = opt;
+//       if (formchange) {
+// 		var curUrl = document.URL;
+// 		var newCulture = opt;
 		
-		var curCulture = getUrlParameters("cultureKey", "", true);
-			if (curCulture) {					
-				var newUrl = curUrl.replace(/(cultureKey=).*?(&|$)/,'cultureKey=' + newCulture + '$2');
-				}
-			else {
-				var newUrl = curUrl + ((curUrl.indexOf('?') == -1) ? '?' : '&') + 'cultureKey=' + newCulture;
-				}
+// 		var curCulture = getUrlParameters("cultureKey", "", true);
+// 			if (curCulture) {					
+// 				var newUrl = curUrl.replace(/(cultureKey=).*?(&|$)/,'cultureKey=' + newCulture + '$2');
+// 				}
+// 			else {
+// 				var newUrl = curUrl + ((curUrl.indexOf('?') == -1) ? '?' : '&') + 'cultureKey=' + newCulture;
+// 				}
 		
-		window.location.href = newUrl;
-      }
-}
+// 		window.location.href = newUrl;
+//       }
+// }
 
-$("#center_country.mainpet_country").change(function () {
-    indexchanges("#center_country", "#center_countrycode", true);
-    //russian_regions(1);
-});
+// $("#center_country.mainpet_country").change(function () {
+//     indexchanges("#center_country", "#center_countrycode", true);
+//     //russian_regions(1);
+// });
 
-$("#country.mainpet_country").change(function () {
-    indexchanges("#country", "#countrycode", true);
-    //russian_regions(2);
-});
+// $("#country.mainpet_country").change(function () {
+//     indexchanges("#country", "#countrycode", true);
+//     //russian_regions(2);
+// });
 
-$("#pages_lenguage").change(function () {
-    indexchanges2("#pages_lenguage", true);
-});
+// $("#pages_lenguage").change(function () {
+//     indexchanges2("#pages_lenguage", true);
+// });
 
-/*Slide text-area*/
-$(".expand_email_text").bind("click", function(){
+// /*Slide text-area*/
+// $(".expand_email_text").bind("click", function(){
 
-    var arrow_down =$(".expand_email_text .arrow_down").css("display")== "block";
-    if(arrow_down){
-        $(".arrow_down").css({display: "none"});
-        $(".arrow_up").css({display: "block"});
-        $(".text_box").slideDown().delay(200);
-    }
-    else{
-        $(".arrow_up").css({display: "none"});
-        $(".arrow_down").css({display: "block"});
-        $(".text_box").slideUp().delay(200);
-    }
-});
+//     var arrow_down =$(".expand_email_text .arrow_down").css("display")== "block";
+//     if(arrow_down){
+//         $(".arrow_down").css({display: "none"});
+//         $(".arrow_up").css({display: "block"});
+//         $(".text_box").slideDown().delay(200);
+//     }
+//     else{
+//         $(".arrow_up").css({display: "none"});
+//         $(".arrow_down").css({display: "block"});
+//         $(".text_box").slideUp().delay(200);
+//     }
+// });
 
-jQuery.validator.addMethod("mail",
-    function(value, element) {
-        return this.optional(element) || /^[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}$/.test(value);
-         });
+// jQuery.validator.addMethod("mail",
+//     function(value, element) {
+//         return this.optional(element) || /^[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}$/.test(value);
+//          });
 
-jQuery.validator.addMethod("select_validation",
-    function(value, element) {
-        return this.optional(element) || !(value == "-1");
-    });
-
-
-jQuery.validator.addMethod("russian_format",
-    function(value, element) {
-		element.value = value.trim().toLowerCase().replace(/\d/g, '').replace(/(^|-|\s)([a-zа-яё])/g, function(a, b, c) { return b + c.toUpperCase() });
-        return this.optional(element) || /(^[^0-9]*)$/.test(value);
-    });
+// jQuery.validator.addMethod("select_validation",
+//     function(value, element) {
+//         return this.optional(element) || !(value == "-1");
+//     });
 
 
-jQuery.validator.addMethod("dateFormat",
-    function(value, element) {
-        return this.optional(element) || /^^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[012])\/(19|20)\d\d$/.test(value);
-    });
-
-jQuery.validator.addMethod("nid_es", function(value, element) {
-    return this.optional(element) || (valida_nif_cif_nie( value.toUpperCase() ) >= 1 && valida_nif_cif_nie( value.toUpperCase() ) != 2);
-});
-
-jQuery.validator.addMethod("phone_es", function(value, element) {
-    return this.optional(element) || /^^[6789]\d{8}$/.test(value);
-});
-
-jQuery.validator.addMethod("nid_es_AR", function(value, element) {
-    return this.optional(element) || /^^[a-zA-Z0-9]{7,10}$/.test(value);
-});
-
-jQuery.validator.addMethod("phone_es_AR", function(value, element) {
-    return this.optional(element) || /^^[0-9]{6,13}$/.test(value);
-});
-
-jQuery.validator.addMethod("phone_zh_TW", function(value, element) {
-    return this.optional(element) || /^^[0-9]{8,10}$/.test(value);
-});
-
-jQuery.validator.addMethod("phone_en_AU", function(value, element) {
-    return this.optional(element) || /^^([2][0-9]{8}$)|([4][0-9]{8}$)/.test(value);
-});
-
-jQuery.validator.addMethod("phone_general", function(value, element) {
-    return this.optional(element) || /^^[0-9]{4,18}$/.test(value);
-});
-jQuery.validator.addMethod("phone_mandatory", function(value, element) {
-    return /^^[0-9]{4,18}$/.test(value);
-});
-jQuery.validator.addMethod("phone_es_MX", function(value, element) {
-    return this.optional(element) || /^^[0-9]{10}$/.test(value);
-});
-
-jQuery.validator.addMethod("phone_pt_BR", function(value, element) {
-    // return this.optional(element) || /^^[0-9]{10}$/.test(value);
-	return this.optional(element) || /^^(\()([0-9]{2})(\))(\ )([1-6]{1}[0-9]{3})(\-)([0-9]{4})(?!0|1|2|3|4|5|6|7|8|9)|(\()([1][1]|[1][2]|[1][3]|[1][4]|[1][5]|[1][6]|[1][7]|[1][8]|[1][9]|[2][1]|[2][2]|[2][4]|[2][7]|[2][8]|[9][1]|[9][2]|[9][3]|[9][4]|[9][5]|[9][6]|[9][7]|[9][8]|[9][9]{1})(\))(\ )([9]{1}[0-9]{3})(\-)([0-9]{5})|(\()([1][1]|[1][2]|[1][3]|[1][4]|[1][5]|[1][6]|[1][7]|[1][8]|[1][9]|[2][1]|[2][2]|[2][4]|[2][7]|[2][8]|[9][1]|[9][2]|[9][3]|[9][4]|[9][5]|[9][6]|[9][7]|[9][8]|[9][9]{1})(\))(\ )([7,8]{1}[0-9]{3})(\-)([0-9]{4})(?!0|1|2|3|4|5|6|7|8|9)|(\()(?!11|12|13|14|15|16|17|18|19|21|22|24|27|28|91|92|93|94|95|96|97|98|99)([0-9]{2})(\))(\ )([7-9]{1}[0-9]{3})(\-)([0-9]{4})(?!0|1|2|3|4|5|6|7|8|9)/.test(value);
-});
-
-jQuery.validator.addMethod("birth_year_mandatory", function(value, element) {
-    return /^^[0-9]{4}$/.test(value);
-});
-
-jQuery.validator.addMethod("postcode_en_AU", function(value, element) {
-    if ( $("#center_country").val()=='AU' ) return /^^[0-9]{3,4}$/.test(value);
-    else return true;
-});
+// jQuery.validator.addMethod("russian_format",
+//     function(value, element) {
+// 		element.value = value.trim().toLowerCase().replace(/\d/g, '').replace(/(^|-|\s)([a-zа-яё])/g, function(a, b, c) { return b + c.toUpperCase() });
+//         return this.optional(element) || /(^[^0-9]*)$/.test(value);
+//     });
 
 
-jQuery.validator.addClassRules("salutation_de", { select_validation: true });
+// jQuery.validator.addMethod("dateFormat",
+//     function(value, element) {
+//         return this.optional(element) || /^^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[012])\/(19|20)\d\d$/.test(value);
+//     });
 
-jQuery.validator.addClassRules("name_ru", { russian_format: true });
-jQuery.validator.addClassRules("nid_es", { nid_es: true });
-jQuery.validator.addClassRules("phone_es", { phone_es: true });
-jQuery.validator.addClassRules("nid_es-AR", { nid_es_AR: true });
-jQuery.validator.addClassRules("phone_es-AR", { phone_es_AR: true });
-jQuery.validator.addClassRules("phone_es-MX", { phone_es_MX: true });
-jQuery.validator.addClassRules("phone_pt-BR", { phone_pt_BR: true });
+// jQuery.validator.addMethod("nid_es", function(value, element) {
+//     return this.optional(element) || (valida_nif_cif_nie( value.toUpperCase() ) >= 1 && valida_nif_cif_nie( value.toUpperCase() ) != 2);
+// });
 
-jQuery.validator.addClassRules("phone_ar", { phone_general: true });
-jQuery.validator.addClassRules("phone_bg", { phone_general: true });
-jQuery.validator.addClassRules("phone_cs-CZ", { phone_general: true });
-jQuery.validator.addClassRules("phone_da", { phone_general: true });
-jQuery.validator.addClassRules("phone_de", { phone_general: true });
-jQuery.validator.addClassRules("phone_de-AT", { phone_general: true });
-jQuery.validator.addClassRules("phone_de-CH", { phone_general: true });
-jQuery.validator.addClassRules("phone_el", { phone_general: true });
-jQuery.validator.addClassRules("phone_en", { phone_general: true });
-jQuery.validator.addClassRules("phone_en-AU", { phone_en_AU: true });
-jQuery.validator.addClassRules("phone_en-CA", { phone_general: true });
-jQuery.validator.addClassRules("phone_en-GB", { phone_general: true });
-jQuery.validator.addClassRules("phone_en-HK", { phone_mandatory: true });
-jQuery.validator.addClassRules("phone_en-NZ", { phone_general: true });
-jQuery.validator.addClassRules("phone_en-PH", { phone_general: true });
-jQuery.validator.addClassRules("phone_en-US", { phone_general: true });
-jQuery.validator.addClassRules("phone_es-CL", { phone_general: true });
-jQuery.validator.addClassRules("phone_es-CO", { phone_general: true });
-jQuery.validator.addClassRules("phone_fi", { phone_general: true });
-jQuery.validator.addClassRules("phone_fr", { phone_general: true });
-jQuery.validator.addClassRules("phone_fr-BE", { phone_general: true });
-jQuery.validator.addClassRules("phone_fr-CA", { phone_general: true });
-jQuery.validator.addClassRules("phone_fr-CH", { phone_general: true });
-jQuery.validator.addClassRules("phone_fr-LU", { phone_general: true });
-jQuery.validator.addClassRules("phone_he", { phone_general: true });
-jQuery.validator.addClassRules("phone_hi-IN", { phone_general: true });
-jQuery.validator.addClassRules("phone_hu", { phone_general: true });
-jQuery.validator.addClassRules("phone_id", { phone_general: true });
-jQuery.validator.addClassRules("phone_it", { phone_general: true });
-jQuery.validator.addClassRules("phone_jp", { phone_general: true });
-jQuery.validator.addClassRules("phone_ko", { phone_general: true });
-jQuery.validator.addClassRules("phone_nl", { phone_general: true });
-jQuery.validator.addClassRules("phone_nl-BE", { phone_general: true });
-jQuery.validator.addClassRules("phone_no", { phone_general: true });
-jQuery.validator.addClassRules("phone_pl", { phone_general: true });
-jQuery.validator.addClassRules("phone_pt", { phone_general: true });
-jQuery.validator.addClassRules("phone_ro", { phone_general: true });
-jQuery.validator.addClassRules("phone_ru", { phone_general: true });
-jQuery.validator.addClassRules("phone_sk", { phone_general: true });
-jQuery.validator.addClassRules("phone_sl", { phone_general: true });
-jQuery.validator.addClassRules("phone_sv", { phone_general: true });
-jQuery.validator.addClassRules("phone_th", { phone_general: true });
-jQuery.validator.addClassRules("phone_tr", { phone_general: true });
-jQuery.validator.addClassRules("phone_zh-CN", { phone_general: true });
-jQuery.validator.addClassRules("phone_zh-HK", { phone_mandatory: true });
-jQuery.validator.addClassRules("phone_zh-TW", { phone_zh_TW: true });
+// jQuery.validator.addMethod("phone_es", function(value, element) {
+//     return this.optional(element) || /^^[6789]\d{8}$/.test(value);
+// });
 
-jQuery.validator.addClassRules("birthyear_en-HK", { birth_year_mandatory: true });
-jQuery.validator.addClassRules("birthyear_zh-HK", { birth_year_mandatory: true });
-jQuery.validator.addClassRules("birthyear_zh-TW", { birth_year_mandatory: true });
+// jQuery.validator.addMethod("nid_es_AR", function(value, element) {
+//     return this.optional(element) || /^^[a-zA-Z0-9]{7,10}$/.test(value);
+// });
 
-jQuery.validator.addClassRules("postcode_en-AU", { postcode_en_AU: true });
+// jQuery.validator.addMethod("phone_es_AR", function(value, element) {
+//     return this.optional(element) || /^^[0-9]{6,13}$/.test(value);
+// });
 
-/*Form Validation*/
-$("#sign-form").validate({
-    ignore: ".ignore",
-    rules:{
-        email:{
-            mail: true
-        },
-        birth_date: {
-            dateFormat: true
-        },
-        age: {
-            digits: true
-        }
-    }
-});
+// jQuery.validator.addMethod("phone_zh_TW", function(value, element) {
+//     return this.optional(element) || /^^[0-9]{8,10}$/.test(value);
+// });
+
+// jQuery.validator.addMethod("phone_en_AU", function(value, element) {
+//     return this.optional(element) || /^^([2][0-9]{8}$)|([4][0-9]{8}$)/.test(value);
+// });
+
+// jQuery.validator.addMethod("phone_general", function(value, element) {
+//     return this.optional(element) || /^^[0-9]{4,18}$/.test(value);
+// });
+// jQuery.validator.addMethod("phone_mandatory", function(value, element) {
+//     return /^^[0-9]{4,18}$/.test(value);
+// });
+// jQuery.validator.addMethod("phone_es_MX", function(value, element) {
+//     return this.optional(element) || /^^[0-9]{10}$/.test(value);
+// });
+
+// jQuery.validator.addMethod("phone_pt_BR", function(value, element) {
+//     // return this.optional(element) || /^^[0-9]{10}$/.test(value);
+// 	return this.optional(element) || /^^(\()([0-9]{2})(\))(\ )([1-6]{1}[0-9]{3})(\-)([0-9]{4})(?!0|1|2|3|4|5|6|7|8|9)|(\()([1][1]|[1][2]|[1][3]|[1][4]|[1][5]|[1][6]|[1][7]|[1][8]|[1][9]|[2][1]|[2][2]|[2][4]|[2][7]|[2][8]|[9][1]|[9][2]|[9][3]|[9][4]|[9][5]|[9][6]|[9][7]|[9][8]|[9][9]{1})(\))(\ )([9]{1}[0-9]{3})(\-)([0-9]{5})|(\()([1][1]|[1][2]|[1][3]|[1][4]|[1][5]|[1][6]|[1][7]|[1][8]|[1][9]|[2][1]|[2][2]|[2][4]|[2][7]|[2][8]|[9][1]|[9][2]|[9][3]|[9][4]|[9][5]|[9][6]|[9][7]|[9][8]|[9][9]{1})(\))(\ )([7,8]{1}[0-9]{3})(\-)([0-9]{4})(?!0|1|2|3|4|5|6|7|8|9)|(\()(?!11|12|13|14|15|16|17|18|19|21|22|24|27|28|91|92|93|94|95|96|97|98|99)([0-9]{2})(\))(\ )([7-9]{1}[0-9]{3})(\-)([0-9]{4})(?!0|1|2|3|4|5|6|7|8|9)/.test(value);
+// });
+
+// jQuery.validator.addMethod("birth_year_mandatory", function(value, element) {
+//     return /^^[0-9]{4}$/.test(value);
+// });
+
+// jQuery.validator.addMethod("postcode_en_AU", function(value, element) {
+//     if ( $("#center_country").val()=='AU' ) return /^^[0-9]{3,4}$/.test(value);
+//     else return true;
+// });
+
+
+// jQuery.validator.addClassRules("salutation_de", { select_validation: true });
+
+// jQuery.validator.addClassRules("name_ru", { russian_format: true });
+// jQuery.validator.addClassRules("nid_es", { nid_es: true });
+// jQuery.validator.addClassRules("phone_es", { phone_es: true });
+// jQuery.validator.addClassRules("nid_es-AR", { nid_es_AR: true });
+// jQuery.validator.addClassRules("phone_es-AR", { phone_es_AR: true });
+// jQuery.validator.addClassRules("phone_es-MX", { phone_es_MX: true });
+// jQuery.validator.addClassRules("phone_pt-BR", { phone_pt_BR: true });
+
+// jQuery.validator.addClassRules("phone_ar", { phone_general: true });
+// jQuery.validator.addClassRules("phone_bg", { phone_general: true });
+// jQuery.validator.addClassRules("phone_cs-CZ", { phone_general: true });
+// jQuery.validator.addClassRules("phone_da", { phone_general: true });
+// jQuery.validator.addClassRules("phone_de", { phone_general: true });
+// jQuery.validator.addClassRules("phone_de-AT", { phone_general: true });
+// jQuery.validator.addClassRules("phone_de-CH", { phone_general: true });
+// jQuery.validator.addClassRules("phone_el", { phone_general: true });
+// jQuery.validator.addClassRules("phone_en", { phone_general: true });
+// jQuery.validator.addClassRules("phone_en-AU", { phone_en_AU: true });
+// jQuery.validator.addClassRules("phone_en-CA", { phone_general: true });
+// jQuery.validator.addClassRules("phone_en-GB", { phone_general: true });
+// jQuery.validator.addClassRules("phone_en-HK", { phone_mandatory: true });
+// jQuery.validator.addClassRules("phone_en-NZ", { phone_general: true });
+// jQuery.validator.addClassRules("phone_en-PH", { phone_general: true });
+// jQuery.validator.addClassRules("phone_en-US", { phone_general: true });
+// jQuery.validator.addClassRules("phone_es-CL", { phone_general: true });
+// jQuery.validator.addClassRules("phone_es-CO", { phone_general: true });
+// jQuery.validator.addClassRules("phone_fi", { phone_general: true });
+// jQuery.validator.addClassRules("phone_fr", { phone_general: true });
+// jQuery.validator.addClassRules("phone_fr-BE", { phone_general: true });
+// jQuery.validator.addClassRules("phone_fr-CA", { phone_general: true });
+// jQuery.validator.addClassRules("phone_fr-CH", { phone_general: true });
+// jQuery.validator.addClassRules("phone_fr-LU", { phone_general: true });
+// jQuery.validator.addClassRules("phone_he", { phone_general: true });
+// jQuery.validator.addClassRules("phone_hi-IN", { phone_general: true });
+// jQuery.validator.addClassRules("phone_hu", { phone_general: true });
+// jQuery.validator.addClassRules("phone_id", { phone_general: true });
+// jQuery.validator.addClassRules("phone_it", { phone_general: true });
+// jQuery.validator.addClassRules("phone_jp", { phone_general: true });
+// jQuery.validator.addClassRules("phone_ko", { phone_general: true });
+// jQuery.validator.addClassRules("phone_nl", { phone_general: true });
+// jQuery.validator.addClassRules("phone_nl-BE", { phone_general: true });
+// jQuery.validator.addClassRules("phone_no", { phone_general: true });
+// jQuery.validator.addClassRules("phone_pl", { phone_general: true });
+// jQuery.validator.addClassRules("phone_pt", { phone_general: true });
+// jQuery.validator.addClassRules("phone_ro", { phone_general: true });
+// jQuery.validator.addClassRules("phone_ru", { phone_general: true });
+// jQuery.validator.addClassRules("phone_sk", { phone_general: true });
+// jQuery.validator.addClassRules("phone_sl", { phone_general: true });
+// jQuery.validator.addClassRules("phone_sv", { phone_general: true });
+// jQuery.validator.addClassRules("phone_th", { phone_general: true });
+// jQuery.validator.addClassRules("phone_tr", { phone_general: true });
+// jQuery.validator.addClassRules("phone_zh-CN", { phone_general: true });
+// jQuery.validator.addClassRules("phone_zh-HK", { phone_mandatory: true });
+// jQuery.validator.addClassRules("phone_zh-TW", { phone_zh_TW: true });
+
+// jQuery.validator.addClassRules("birthyear_en-HK", { birth_year_mandatory: true });
+// jQuery.validator.addClassRules("birthyear_zh-HK", { birth_year_mandatory: true });
+// jQuery.validator.addClassRules("birthyear_zh-TW", { birth_year_mandatory: true });
+
+// jQuery.validator.addClassRules("postcode_en-AU", { postcode_en_AU: true });
+
+// /*Form Validation*/
+// $("#sign-form").validate({
+//     ignore: ".ignore",
+//     rules:{
+//         email:{
+//             mail: true
+//         },
+//         birth_date: {
+//             dateFormat: true
+//         },
+//         age: {
+//             digits: true
+//         }
+//     }
+// });
 
 
 // $("#center_sign-form").validate({
