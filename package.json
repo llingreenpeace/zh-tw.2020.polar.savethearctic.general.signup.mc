@@ -17,10 +17,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build:en": "PUBLIC_URL=https://change.greenpeace.org.tw/2020/petition/zh-TW.2020.polar.savethearctic react-scripts build",
+    "build:en": "PUBLIC_URL=https://change.greenpeace.org.tw/2020/petition/zh-TW.2020.polar.savethearctic.mc react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "yarn run build:en && gpea-npm-en-uploader"
+    "deploy": "yarn run build:en && gpea-npm-en-uploader",
+    "deploy-mc": "yarn run build:en && node mc-deploy.js"
   },
   "eslintConfig": {
     "extends": "react-app"
