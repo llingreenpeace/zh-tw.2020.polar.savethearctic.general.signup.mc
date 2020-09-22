@@ -130,12 +130,7 @@ var pageInit = function(){
 			$('#mc-form [name="FirstName"]').val($('#center_name').val());
 			$('#mc-form [name="LastName"]').val($('#center_lastname').val());
 			$('#mc-form [name="Email"]').val($('#center_email').val());
-
-			if (!$('#center_phone').prop('required') && !$('#center_phone').val()) {
-				$('#mc-form [name="MobilePhone"]').val('0900000000');
-			} else {
-				$('#mc-form [name="MobilePhone"]').val($('#center_phone').val());
-			}
+			$('#mc-form [name="MobilePhone"]').val($('#center_phone').val());
 			$('#mc-form [name="Birthdate"]').val($('#center_yearofbirth').val());
 			$('#mc-form [name="OptIn"]')[0].checked = $('#center_rememberme')[0].checked;
 
