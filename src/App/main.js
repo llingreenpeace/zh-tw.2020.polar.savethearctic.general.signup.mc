@@ -1,3 +1,5 @@
+import { phone_required, line_QR_code } from './utm_source_dd.js';
+
 const {$, anime, autosize, Cookies, Highcharts, dataLayer} = window
 
 const donateUrl = "https://supporter.ea.greenpeace.org/tw/s/donate?campaign=polar&ref=savethearctic_thankyou_page";
@@ -63,9 +65,9 @@ function sendPetitionTracking(eventLabel, eventValue) {
 
 var pageInit = function(){
 	var _ = this;
-	_.$container = $('#form');
+	var $container = $('#form');
 
-	_.$container.find('input, select').bind('change blur', function(){
+	$container.find('input, select').bind('change blur', function(){
 		if($(this).val() !== ''){
 			$(this).addClass('filled');
 		}
@@ -82,7 +84,7 @@ var pageInit = function(){
 
 	// create the year options
 	let currYear = new Date().getFullYear()
-	for (var i = 0; i < 80; i++) {
+	for (var i = 0; i < 100; i++) {
 
 		let option = `<option value="${currYear-i}-01-01">${currYear-i}</option>`
 		$("#center_yearofbirth").append(option);
@@ -100,14 +102,14 @@ var pageInit = function(){
 	$.validator.addMethod(
 		"taiwan-phone",
 		function (value, element) {
-
 			const phoneReg6 = new RegExp(/^(0|886|\+886)?(9\d{8})$/).test(value);
-			const phoneReg7 = new RegExp(/^(0|886|\+886){1}[2-8]-?\d{6,8}$/).test(value);
+			const phoneReg7 = new RegExp(/^(0|886|\+886){1}[3-8]-?\d{6,8}$/).test(value);
+			const phoneReg8 = new RegExp(/^(0|886|\+886){1}[2]-?\d{8}$/).test(value);
 		
 			if ($('#center_phone').prop('required')) {
-				return this.optional(element) || phoneReg6 || phoneReg7;
+				return this.optional(element) || phoneReg6 || phoneReg7 || phoneReg8;
 			} else if ($('#center_phone').val()) {
-				return this.optional(element) || phoneReg6 || phoneReg7;
+				return this.optional(element) || phoneReg6 || phoneReg7 || phoneReg8;
 			}
 			return true
 		},
@@ -219,7 +221,7 @@ var pageInit = function(){
 		}
 	});
 
-	hideDdBtn();
+	//hideDdBtn();
 }
 
 /**
@@ -270,6 +272,7 @@ const hideFullPageLoading = () => {
 /**
  * Hide the donatin btn in DD page
  */
+/*
 const hideDdBtn = () => {
 	const queryString = window.location.search;
 	const urlParams = new URLSearchParams(queryString);
@@ -278,7 +281,7 @@ const hideDdBtn = () => {
 
 		$('#center_phone').removeAttr("required"); //移除電話欄位 required Attr        
 	}
-}
+}*/
 
 /**
  * Show the submitted error message 
@@ -295,5 +298,8 @@ const showSubmittedError = () => {
 
 $(function(){
 	pageInit();
-	changeToPage(1)
+	changeToPage(1);
+	// set line QR code in the thank you page
+	line_QR_code('line_block');
+	phone_required('center_phone');
 })
